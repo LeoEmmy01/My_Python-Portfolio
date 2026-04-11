@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Pizza Billing</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <style>
+            body {font-family: Arial; background:#f8f4f0; display:flex; justify-content: center; padding: 50px;}
+            .container{ background: #fff; padding:30px; border-radius: 10; box-shadow: 0 5px 1px rgba( 0, 0, 0,0.2); width: 400px;}
+            h2 {text-align: center; color:#e74c3c}
+            label{display: block; margin-top: 15px; font-weight:bold;}
+            input, select { width: 100%; padding:8px; margin-top:5px; border:1px solid #ccc;}
+            button:hover{background:#c0392b;}
+            button { margin-top:20px; padding:15px; background:#e74c3c; color:#fff; border:none; border-radius: 5px; font-size:16px; cursor:pointer;}
+            .receipt { margin-top: 20px; padding:15px; background: #f2f2f2; border-radius: 10px;}
+            .receipt p { margin: 5px 0;}
+        </style>
+    </head>
+    <body>
+        <div class="contianer">
+            <h2>Pizza Billing</h2>
+            <form method="POST">
+                <label for="size">Pizza Size</label>
+                <select name="size" id="size" required>
+                    <option value="small">Small ($10)</option>
+                    <option value="medium"> Medium ($15)</option>
+                    <option value="large">Large ($20)</option>
+                </select>
+                <label for="toppings">Number of Topping ($2 each):</label>
+                <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+
+                <label for="quantity">Quantity of Pizzas:</label>
+                <select name="delivery" id="delivery" required>
+                    <option value="pickup">Pickup</option>
+                    <option value="delivery">delivery ($3 fee)</option>
+                </select>
+
+                <button type="submit">Calculate Bill</button>
+            </form>
+
+            {% if receipt %}
+            <div class="receipt">
+                <h3>Reciept</h3>
+                <p>Pizza Size: {{receipt.size }}</p>
+                <p>Quantity: {{receipt.quantity }}</p>
+                <p>Topping per Pizza: {{receipt.toppings}}</p>
+                <hr>
+                <p>Base Price: ${{ "%.2f"| format(receipt.base_price) }}</p>
+                <p>Topping Cost: ${{ "%.2f" | fromart(receipt.toppings_total) }}</p>
+                <p>Subtotal: ${{ "%.2f" | format(receipt.subtotal) }}</p>
+                <p>Tax (8%): ${{ "%.2f" | format(receipt.tax) }}</p>
+                <p>Delivery Fee: ${{ "%.2f" | fromat(receipt.delivery_fee) }}</p>
+                <hr>
+                <p><strong>Total: ${{ "%.2f" | format(receipt.total) }}</strong></p>
+            </div>
+            {% endif %}
+        </div>
+    </body>
+</html>
