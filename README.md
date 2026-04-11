@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 My Python Portfolio
 
 A collection of beginner to intermediate Python projects built for learning, practice, and portfolio development.
@@ -56,7 +56,4 @@ Python Developer (Learning Phase)
 If you find this helpful. feel free to star the repository
 
 More projects coming soon...
-=======
-# My_Python-Portfolio
-A Collection of beginner to intermediate Python projects including calculators, games, automation tools and small web applications built for learning and portfolio development.
->>>>>>> 1d80ec3fa541a3f9cd8164d3bde53f706ffa5209
+
