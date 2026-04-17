@@ -11,6 +11,8 @@ This repository contains multiple Python projects covering:
 	•	Problem solving
 	•	Small applications
 	•	Beginner web apps (Flask)
+	•	Calculator App(Tkinter)
+	•	An Expense Tracker App(Tkinter)
 
 These projects are created as part of my learning journey to become a professional developer.
 
@@ -22,6 +24,7 @@ These projects are created as part of my learning journey to become a profession
 	•	Comparison Calculator
 	•	Discount Calculator
 	•	Interactive Shopping Calculator
+	•	App Calculator(Tkinter)
 
 
 🎮 Games
@@ -40,8 +43,14 @@ Pizza App (Flask)
 	•	Basic Web Interface
 
 
+Utility App (Tkinter)
+	•	Expense_Tracker App
+
+
+
 🛠 Technologies Used
 	•	Python
+	•	Tkinter
 	•	Flask
 	•	HTML
 	•	CSS (Basic)
